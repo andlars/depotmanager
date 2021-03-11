@@ -1,0 +1,34 @@
+Create multiple administrative levels like admin and user.
+Class lager():
+  vareliste                 [vare]
+  ordrehistorik             [ordre]
+  dato_for_sidste_optælling [str]
+  dato_for_næste_optælling  [str]
+  dato                      [str]
+
+Class vare():
+  varenummer                (int)
+  varenavn                  (str)
+  antal                     (int)
+  øgAntal                   (metode)
+  formindskAntal()          (metode)
+
+Class ordre():
+  vareliste                 [vare]
+  bruger_ID                 (str)
+  tidspunkt                 (str)
+  brugernavn                (str)
+
+Class bruger():
+  admin                     (bool)
+  brugernavn                (str)
+  bruger_id                 (str)
+  mail                      (str)
+
+Eventuelle funktioner / metoder:
+tilføjBruger()
+
+
+Hvad vi mangler at se på:
+Database
+Functions
