@@ -1,17 +1,20 @@
 Create multiple administrative levels like admin and user.
+Class lager():
+  vareliste [vare]
 
-Vare (dict):
-  varenummer (int)
-  varenavn (str)
-  antal_På_Lager(int)
-
-Ordre (dict):
+Class vare():
   varenummer (int)
   varenavn (str)
   antal (int)
-  tidspunkt (str)
 
-bruger (dict):
+Class ordre():
+  vareliste [vare]
+  varenavn (str)
+  bruger_ID
+  tidspunkt (str)
+  brugernavn (str)
+
+Class bruger():
   admin (bool)
   brugernavn (str)
   Bruger_id (str)
