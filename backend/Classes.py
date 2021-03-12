@@ -4,3 +4,6 @@ class bruger:
         self.brugernavn = brugernavn
         self.bruger_ID = bruger_ID
         self.mail = mail
+
+
+Engbjerg is gæ
