@@ -1,7 +1,7 @@
 import datetime
 
 class bruger:
-    def __init__(self,admin, brugernavn, bruger_ID, mail):
+    def __init__(self, admin, brugernavn, bruger_ID, mail):
         self.admin = admin
         self.brugernavn = brugernavn
         self.bruger_ID = bruger_ID
@@ -50,5 +50,5 @@ class ordre:
     def __init__(self):
         self.vareliste = []
         self.brugernavn = None
-        self.bruder_ID = None
+        self.bruger_ID = None
         self.tidspunkt = datetime.datetime.now
