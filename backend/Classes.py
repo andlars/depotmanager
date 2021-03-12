@@ -31,5 +31,5 @@ class ordre:
     def __init__(self):
         self.vareliste = []
         self.brugernavn = None
-        self.bruder_ID = None
+        self.bruger_ID = None
         self.tidspunkt = datetime.datetime.now
