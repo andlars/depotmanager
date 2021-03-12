@@ -19,6 +19,8 @@ class vare:
 
 class lager:
     def __init__(self, dato_for_sidste_optaelling, dato_for_naeste_optaelling, dato):
+        self.vareliste = []
+        self.ordrehistorik = [] 
         self.dato_for_sidste_optaelling = dato_for_sidste_optaelling
         self.dato_for_naeste_optaelling = dato_for_naeste_optaelling
         self.dato = dato
