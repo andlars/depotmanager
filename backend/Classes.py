@@ -20,12 +20,31 @@ class vare:
             self.antal += n
 
 class lager:
-    def __init__(self, dato_for_sidste_optaelling, dato_for_naeste_optaelling, dato):
+    def __init__(self):
         self.vareliste = []
         self.ordrehistorik = []
-        self.dato_for_sidste_optaelling = dato_for_sidste_optaelling
-        self.dato_for_naeste_optaelling = dato_for_naeste_optaelling
-        self.dato = dato
+#        self.dato_for_sidste_optaelling = dato_for_sidste_optaelling
+#        self.dato_for_naeste_optaelling = dato_for_naeste_optaelling
+#        self.dato = dato
+
+    def tilfoejNyVare(self, varenummer):
+        for i in self.vareliste:
+            if i.varenummer == varenummer:
+                print("Varen eksisterer allerede i systemet")
+                return None
+        try:
+            varenavn = input("Varenavn: ")
+            antal = int(input("Antal: "))
+            self.vareliste.append(vare(varenummer, varenavn, antal))
+        except:
+            print("Fejl")
+
+    def fjernEksVare(self, varenummer):
+        for i in self.vareliste:
+            if i.varenummer == varenummer:
+                print("Fjernede " + i.varenavn + " " + str(i.varenummer)) 
+                self.vareliste.remove(i)
+                break
 
 class ordre:
     def __init__(self):
