@@ -4,3 +4,4 @@ class bruger:
         self.brugernavn = brugernavn
         self.bruger_ID = bruger_ID
         self.mail = mail
+        self.bruh = 1
