@@ -1,0 +1,15 @@
+new object type: bruger
+admin: False
+brugernavn: Kristian Sejr Gotfredsen
+bruger_ID: 420
+mail: ksg2001@live.com
+new object type: bruger
+admin: True
+brugernavn: Nicklas Bogut Nielsen
+bruger_ID: 69
+mail: nicklas.bogut@live.dk
+new object type: bruger
+admin: False
+brugernavn: Simon Marius Mahler Thomsen
+bruger_ID: 69420
+mail: simon.thomsen01@gmail.com
