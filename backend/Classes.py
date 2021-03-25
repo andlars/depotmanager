@@ -6,8 +6,20 @@ ROOT_DIR = os.path.abspath(os.getcwd()) + "\\backend\data\\"
 
 brugerList = []
 
+#Pickle og unpickle brugerlisten
+with open(ROOT_DIR + "BrugerList.pkl", "wb") as pklBruger:
+    pickle.dump(brugerList, pklBruger)
+
 with open(ROOT_DIR + "BrugerList.pkl", "rb") as unpklBruger:
     brugerList = pickle.load(unpklBruger)
+
+#Pickle og unpickle lager
+with open(ROOT_DIR + "Lager.pkl", "wb") as pklLager:
+    pickle.dump(lager, pklLager)
+
+with open(ROOT_DIR + "Lager.pkl", "rb") as unpklLager:
+    lager = pickle.load(unpklLager)
+
 
 class bruger:
     def __init__(self, admin, brugernavn, bruger_ID, mail):
@@ -15,10 +27,6 @@ class bruger:
         self.brugernavn = brugernavn
         self.bruger_ID = bruger_ID
         self.mail = mail
-
-    def write2file(self):
-        with open(ROOT_DIR + "BrugerList.pkl", "wb") as pklBruger:
-            pickle.dump(brugerList, pklBruger)
 
 class vare:
     def __init__(self, varenummer, varenavn, antal):
