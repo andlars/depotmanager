@@ -29,7 +29,6 @@ class bruger:
         self.bruger_ID = bruger_ID
         self.mail = mail
 
-<<<<<<< HEAD
     def write2file(self):
         with open(ROOT_DIR + "BrugerList.pkl", "wb") as pklBruger:
             pickle.dump(brugerList, pklBruger)
@@ -42,8 +41,6 @@ def nyBruger():
     bruger_ID = random.randint(1000000000000,9999999999999)
     brugerList.append(bruger(admin,navn,bruger_ID,mail))
 
-=======
->>>>>>> 1debd1fc9a78fcfe07f7ff13282801608081e43a
 class vare:
     def __init__(self, varenummer, varenavn, antal):
         self.varenummer = varenummer
