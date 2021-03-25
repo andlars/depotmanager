@@ -1,6 +1,7 @@
 import datetime
 import pickle
 import os
+import random
 
 ROOT_DIR = os.path.abspath(os.getcwd()) + "\\backend\data\\"
 
@@ -19,6 +20,14 @@ class bruger:
     def write2file(self):
         with open(ROOT_DIR + "BrugerList.pkl", "wb") as pklBruger:
             pickle.dump(brugerList, pklBruger)
+
+def nyBruger():
+    global brugerList
+    navn = input("Navn:")
+    admin = input("True eller False:")
+    mail = input("Mail:")
+    bruger_ID = random.randint(1000000000000,9999999999999)
+    brugerList.append(bruger(admin,navn,bruger_ID,mail))
 
 class vare:
     def __init__(self, varenummer, varenavn, antal):
