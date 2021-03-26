@@ -5,18 +5,8 @@ import random
 
 ROOT_DIR = os.path.abspath(os.getcwd()) + "\\data\\"
 
+l = 0
 brugerList = []
-
-#Pickle og unpickle brugerlisten
-
-with open(ROOT_DIR + "BrugerList.pkl", "rb") as unpklBruger:
-    brugerList = pickle.load(unpklBruger)
-
-#Pickle og unpickle lager
-
-with open(ROOT_DIR + "Lager.pkl", "rb") as unpklLager:
-    lager = pickle.load(unpklLager)
-
 
 class bruger:
     def __init__(self, admin, brugernavn, bruger_ID, mail):
@@ -28,6 +18,10 @@ class bruger:
     def write2file(self):
         with open(ROOT_DIR + "BrugerList.pkl", "wb") as pklBruger:
             pickle.dump(brugerList, pklBruger)
+
+#Unpickle Brugerlisten
+with open(ROOT_DIR + "BrugerList.pkl", "rb") as unpklBruger:
+    brugerList = pickle.load(unpklBruger)
 
 def nyBruger():
     global brugerList
@@ -77,8 +71,13 @@ class lager:
                 break
 
     def write2file(self):
+        global l
         with open(ROOT_DIR + "Lager.pkl", "wb") as pklLager:
-            pickle.dump(lager, pklLager)
+            pickle.dump(l, pklLager)
+
+# Unpickle Lager
+with open(ROOT_DIR + "Lager.pkl", "rb") as unpklLager:
+    l = pickle.load(unpklLager)
 
 class ordre:
     def __init__(self):
