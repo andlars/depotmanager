@@ -75,13 +75,43 @@ class lager:
         with open(ROOT_DIR + "Lager.pkl", "wb") as pklLager:
             pickle.dump(l, pklLager)
 
+    def nyOrdre(self):
+        o = ordre()
+        run = True
+
+        while run:
+            varenummer = int(input('Indtast varenummer eller indtast exit for at afslutte: '))
+            if varenummer == 'exit':
+                run = False
+            else:
+                antal = int(input('Antal af varen: '))
+            
+
+
+        self.ordrehistorik.append(o.tilfoejVare(varenummer))
+
 # Unpickle Lager
 with open(ROOT_DIR + "Lager.pkl", "rb") as unpklLager:
     l = pickle.load(unpklLager)
 
 class ordre:
+    global l
+
     def __init__(self):
         self.vareliste = []
         self.brugernavn = None
         self.bruger_ID = None
         self.tidspunkt = datetime.datetime.now
+
+    def tilfoejVare(self, varenummer):
+        for i in l.vareliste:
+            if varenummer == i.varenummer:
+                antal = int(input('Antal: '))
+                i.formindskAntal(antal)
+                self.vareliste.append([i.varenummer,i.varenavn,antal])
+                return self.vareliste
+
+        print('Varen findes ikke')
+
+    def afslutOrdre(self):
+        pass
