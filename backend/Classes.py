@@ -3,7 +3,7 @@ import pickle
 import os
 import random
 
-ROOT_DIR = os.path.abspath(os.getcwd()) + "\\backend\data\\"
+ROOT_DIR = os.path.abspath(os.getcwd()) + "\\data\\"
 
 brugerList = []
 
