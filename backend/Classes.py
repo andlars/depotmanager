@@ -87,6 +87,10 @@ class lager:
             elif input == "fjern":
                 index = int(input("Indtast index af varen i varelisten: "))
                 o.fjernVare(index)
+            elif input == "ændre":
+                index = int(input("Indtast index af varen i varelisten: "))
+                antal = int(input("Indtast det nye antal: "))
+                o.aendreAntal(index,antal)
             else:
                 antal = int(input('Antal af varen: '))
                 o.tilfoejVare(int(input),antal)
@@ -117,5 +121,11 @@ class ordre:
         for i in l.vareliste:
             if self.vareliste[index][0] == i.varenummer:
                 i.foroegAntal(self.vareliste[index][2])
-
         self.vareliste.pop(index)
+
+    def aendreAntal(index, antal):
+        exAntal = self.vareliste[index][2]
+        self.vareliste[index][2] = antal
+        for i in l.vareliste:
+            if self.vareliste[index][0] == i.varenummer:
+                i.foroegAntal(exAntal-antal)
