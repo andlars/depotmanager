@@ -83,12 +83,11 @@ class lager:
             varenummer = int(input('Indtast varenummer eller indtast exit for at afslutte: '))
             if varenummer == 'exit':
                 run = False
+                self.ordrehistorik.append(o.vareliste)
             else:
                 antal = int(input('Antal af varen: '))
-            
+                self.ordrehistorik.append(o.tilfoejVare(varenummer,antal))
 
-
-        self.ordrehistorik.append(o.tilfoejVare(varenummer))
 
 # Unpickle Lager
 with open(ROOT_DIR + "Lager.pkl", "rb") as unpklLager:
@@ -103,15 +102,10 @@ class ordre:
         self.bruger_ID = None
         self.tidspunkt = datetime.datetime.now
 
-    def tilfoejVare(self, varenummer):
+    def tilfoejVare(self, varenummer, antal):
         for i in l.vareliste:
             if varenummer == i.varenummer:
-                antal = int(input('Antal: '))
                 i.formindskAntal(antal)
                 self.vareliste.append([i.varenummer,i.varenavn,antal])
-                return self.vareliste
-
-        print('Varen findes ikke')
-
-    def afslutOrdre(self):
-        pass
+            else:
+                print('Varen findes ikke')
