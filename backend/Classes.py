@@ -80,13 +80,16 @@ class lager:
         run = True
 
         while run:
-            varenummer = int(input('Indtast varenummer eller indtast exit for at afslutte: '))
-            if varenummer == 'exit':
+            input = input('Indtast varenummer eller indtast exit for at afslutte eller indtast fjern for ændre ordre: ')
+            if input == 'exit':
                 run = False
                 self.ordrehistorik.append(o.vareliste)
+            elif input == "fjern":
+                index = int(input("Indtast index af varen i varelisten: "))
+                o.fjernVare(index)
             else:
                 antal = int(input('Antal af varen: '))
-                o.tilfoejVare(varenummer,antal)
+                o.tilfoejVare(int(input),antal)
 
 
 # Unpickle Lager
@@ -109,3 +112,10 @@ class ordre:
                 self.vareliste.append([i.varenummer,i.varenavn,antal])
             else:
                 print('Varen findes ikke')
+
+    def fjernVare(index):
+        for i in l.vareliste:
+            if self.vareliste[index][0] == i.varenummer:
+                i.foroegAntal(self.vareliste[index][2])
+
+        self.vareliste.pop(index)
