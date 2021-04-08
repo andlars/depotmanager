@@ -86,7 +86,7 @@ class lager:
                 self.ordrehistorik.append(o.vareliste)
             else:
                 antal = int(input('Antal af varen: '))
-                self.ordrehistorik.append(o.tilfoejVare(varenummer,antal))
+                o.tilfoejVare(varenummer,antal)
 
 
 # Unpickle Lager
