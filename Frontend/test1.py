@@ -1,4 +1,3 @@
-import tkinter as tk
 from tkinter import *
 
 #def
@@ -10,6 +9,10 @@ def click():
     except:
         password = "Kodeordet er forkert"
     output.insert(END, password)
+
+def close_window():
+    window.destroy()
+
 
 #main:
 window = Tk()
@@ -39,18 +42,15 @@ output.grid(row=5, column=2, columnspan=1, sticky=W)
 
 #exit label:
 Button(window, text="Forlad", width = 7, command=close_window).grid(row=8,column=2, sticky=N)
-def close_window():
-    window.destroy()
-    exit()
-
 
 #Show window:
 kodeord = {'andl':'Kodeordet er godkendt','niels':'Kodeordet er godkendt','jakob':'Drengen er eftersøgt'}
 
 #Label.pack()
-window.mainloop()
 
 #######SCAN_VARER#######
 scan = Tk()
 scan.title("Depot htx hjørring: scan")
 scan.configure(background="white")
+
+window.mainloop()
